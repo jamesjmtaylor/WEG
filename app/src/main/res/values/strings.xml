@@ -1,0 +1,123 @@
+<resources>
+    <string name="app_name">Worldwide Equipment Guide</string>
+
+    <!-- Placeholder until I can figure out variable titles for each piece of equipment -->
+    <string name="title_activity_display_message">Placeholder</string>
+
+    <string name="title_section1">Worldwide Equipment Guide</string>
+
+    <string name="Equipment_Name">Equipment Name</string>
+
+    <!--Strings for the Main Activity-->
+    <string name="priWeapon">Primary Weapon</string>
+    <string name="priMaxRange">Maximum Range</string>
+    <string name="priPen">Armor Penetration</string>
+    <string name="altWeapon">Secondary Weapon</string>
+    <string name="altMaxRange">Maximum Range</string>
+    <string name="altPen">Armor Penetration</string>
+    <string name="atgmWeapon">Anti-Tank Guided Missile</string>
+    <string name="atgmMaxRange">Maximum Range</string>
+    <string name="atgmPen">Armor Penetration</string>
+    <string name="armorThickness">Vehicle Armor Thickness</string>
+    <string name="speed">Vehicle Maximum Speed</string>
+    <string name="autonomy">Vehicle Autonomy</string>
+    <string name="weight">Vehicle Weight</string>
+
+    <string name="search_hint">Search Equipment</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="NA">Not Applicable</string>
+    <string name="main_help">In order to access the equipment drag your finger from the far right of the
+        screen to the left.  Each page of the app has its own help dialog if you require assistance
+        on that page\'s functionality.</string>
+
+
+    <!--Strings for the menu bars-->
+    <string name="memorization_aid">Memorization Aid</string>
+    <string name="home">Home</string>
+    <string name="difficulty">Change Difficulty</string>
+    <string name="category">Change Category</string>
+    <string name="weapon_calculator">Weapon Calculator</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="about_message">This application was developed by James Taylor under Ikras Inc. It
+        utilizes data from the <u>US Army Worldwide Equipment Guide</u>. Images were obtained either
+        from the <u>US Army Worldwide Equipment Guide</u> or from <u>Wikimedia</u> under the
+        Creative Commons attribution license. Please comment on any equipment or functionality that
+        you would like to see added in future releases at the Google Play Store.</string>
+
+    <!--Strings for the memorization aid activity-->
+    <string name="quiz_title">Equipment Memorization Aid</string>
+    <string name="choices">Select Number of Choices</string>
+    <string name="correct">Correct!</string>
+    <string name="guess_answer">Guess the Answer</string>
+    <string name="guesses">guesses</string>
+    <string name="incorrect_answer">Incorrect!</string>
+    <string name="more_weapons_title">More Weapons Required</string>
+    <string name="more_weapons_message">There is not enough possible choices in the selected category.
+        Please select more categories</string>
+    <string name="of">of</string>
+    <string name="ok">OK</string>
+    <string name="question">Question</string>
+    <string name="reset_quiz">Reset Quiz</string>
+    <string-array name="categories">
+        <item>Primary Weapon</item>
+        <item>Primary Weapon Maximum Range</item>
+        <item>Primary Weapon Armor Penetration</item>
+        <item>Secondary Weapon</item>
+        <item>Secondary Weapon Maximum Range</item>
+        <item>Secondary Weapon Armor Penetration</item>
+        <item>Anti-Tank Guided Missile</item>
+        <item>ATGM Maximum Range</item>
+        <item>ATGM Armor Penetration</item>
+        <item>Vehicle Armor Thickness</item>
+        <item>Vehicle Maximum Speed</item>
+        <item>Vehicle Autonomy</item>
+        <item>Vehicle Weight</item>
+    </string-array>
+    <string-array name="guessesList">
+        <item>3</item>
+        <item>6</item>
+        <item>9</item>
+    </string-array>
+    <string name="aid_help">Guess the correct equipment data based on the image displayed.
+        Increase the difficulty by selecting the \"Change Difficulty\" item on the menu and choosing
+        the number of choices to guess from. After you have successfully answered ten questions a
+        pop-up will display your accuracy and the quiz will be restarted</string>
+
+    <!--Strings for the equipment calculator activity-->
+    <string name="calculator_title">Weapon Effects Calculator</string>
+    <string name="adjust_slider_maximum">Adjust Slider Maximum</string>
+    <string name="manually_enter_range">Manually Enter Range</string>
+    <string name="calculator_help">Select an attacker and a defender from the drop down menus.  Then
+        use the slider to adjust the range at which the firer shoots at the target.
+        The effects will be color coded and labeled. If you wish to manually enter the range, or
+        adjust the slider preset, select the appropriate item from the menu bar where you
+        accessed help</string>
+    <string name="firer">Firer</string>
+    <string name="set">Set</string>
+    <string name="cancel">Cancel</string>
+    <string name="target">Target</string>
+    <string name="range">Range</string>
+    <string name="out_of_range">is out of range</string>
+    <string name="ineffective">is ineffective</string>
+    <string name="flanks">effective only on flanks</string>
+    <string name="effective">is effective</string>
+    <string-array name="exampleWeaponsArray">
+        <item>BMP-1</item>
+        <item>BMP-2</item>
+        <item>BMP-3</item>
+        <item>BTR-60</item>
+        <item>BTR-80</item>
+        <item>BTR-90</item>
+        <item>M1A2</item>
+        <item>M2A3</item>
+    </string-array>
+    <string name="firer_prompt">Choose the Firing Weapon</string>
+    <string name="target_prompt">Choose the Target Weapon</string>
+</resources>

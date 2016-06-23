@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:id="@+id/home" android:title="@string/home"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/memorization_aid" android:title="@string/memorization_aid"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/weapon_calculator" android:title="@string/weapon_calculator"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/help" android:title="@string/help"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/about" android:title="@string/about"
+        android:orderInCategory="100" app:showAsAction="never" />
+</menu>

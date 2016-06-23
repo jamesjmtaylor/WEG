@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".WeaponCalculatorActivity">
+    <item android:id="@+id/home" android:title="@string/home"
+        android:orderInCategory="1" app:showAsAction="never" />
+    <item android:id="@+id/memorization_aid" android:title="@string/memorization_aid"
+        android:orderInCategory="2" app:showAsAction="never" />
+    <item android:id="@+id/adjust_slider_maximum" android:title="@string/adjust_slider_maximum"
+        android:orderInCategory="3" app:showAsAction="never" />
+    <item android:id="@+id/manually_enter_range" android:title="@string/manually_enter_range"
+        android:orderInCategory="4" app:showAsAction="never" />
+    <item android:id="@+id/help" android:title="@string/help"
+        android:orderInCategory="5" app:showAsAction="never" />
+    <item android:id="@+id/about" android:title="@string/about"
+        android:orderInCategory="6" app:showAsAction="never" />
+</menu>

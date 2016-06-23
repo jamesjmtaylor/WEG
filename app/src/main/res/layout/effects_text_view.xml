@@ -1,0 +1,8 @@
+<!--Changing Layout height and width seem to have no effect (tried 100dp, match_parent, wrap_content -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/WeaponEffect"
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="10dp"/>

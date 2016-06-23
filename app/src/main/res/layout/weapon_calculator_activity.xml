@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:background="@color/background">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background">
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/calculator_title"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        <TableLayout
+            android:id="@+id/vehicleTableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:stretchColumns="1, 2">
+
+            <!-- Table Row 0 -->
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/tableRow0">
+                <ImageView
+                    android:id="@+id/firerImageView"
+                    android:contentDescription="@string/firer"
+                    android:adjustViewBounds="false"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/firer"
+                    android:gravity="center"/>
+
+                <ImageView
+                    android:id="@+id/targetImageView"
+                    android:contentDescription="@string/target"
+                    android:adjustViewBounds="false"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/target"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <!-- Table Row 1 -->
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/tableRow1">
+                <Spinner
+                    android:id="@+id/firerSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:prompt="@string/firer_prompt"
+                    android:entries="@array/exampleWeaponsArray"
+                    android:layout_weight="1"/>
+                <Spinner
+                    android:id="@+id/targetSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:prompt="@string/target_prompt"
+                    android:entries="@array/exampleWeaponsArray"
+                    android:layout_weight="1"/>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/seekBarTableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:stretchColumns="1, 2, 3">
+
+            <!-- Table Row 2 -->
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/tableRow2">
+                <TextView
+                    android:id="@+id/rangeTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/range"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:focusable="false"/>
+                <SeekBar
+                    android:id="@+id/rangeSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="3"
+                    android:progress="1000"
+                    android:max="5000"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="5dp"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:id="@+id/rangeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1000 meters"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center_vertical"
+                    android:focusable="false"
+                    android:layout_weight="1"/>
+            </TableRow>
+        </TableLayout>
+            <!--Lessons learned thus far:
+            1. TableLayout only controls its own dimensions and everything else is just slapped inside it without being altered.
+            2. Table rows dictate padding, margins, and gravity of the effects_text_view.
+            3. effects_text_view only controls the padding.
+            4. The width must be programmatically set to the view when it is dynamically created.  It defaults to wrap text-->
+<!--        </TableLayout>
+            <TableLayout
+                android:id="@+id/effectTableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TableRow
+                    android:id="@+id/effectTableRow0"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal">
+                </TableRow>
+                <TableRow
+                    android:layout_weight="1"
+                    android:id="@+id/effectTableRow1"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_horizontal">
+                </TableRow>
+                <TableRow
+                    android:layout_weight="1"
+                    android:id="@+id/effectTableRow2"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal">
+                </TableRow>
+        </TableLayout>-->
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/effectLinearLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
