@@ -120,4 +120,5 @@
     </string-array>
     <string name="firer_prompt">Choose the Firing Weapon</string>
     <string name="target_prompt">Choose the Target Weapon</string>
+    <string name="search">Search Equipment</string>
 </resources>

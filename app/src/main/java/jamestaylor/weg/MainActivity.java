@@ -10,11 +10,13 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.FragmentManager;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.ViewDragHelper;
 import android.support.v7.app.ActionBarActivity;
 
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -23,6 +25,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import jamestaylor.weg.Equipment.Equipment;
 import jamestaylor.weg.Equipment.EquipmentContent;
@@ -41,7 +44,7 @@ import jamestaylor.weg.R;
  * This is the main activity for WEG and is what the user initially sees when they start the app
  */
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     //public static final String ARG_ITEM_ID = "item_id";
 
@@ -61,6 +64,7 @@ public class MainActivity extends ActionBarActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private String mActivityTitle;
+    private android.support.v7.widget.SearchView mSearchView;
 
     ArrayAdapter<Equipment> mAdapter;
 
@@ -140,41 +144,38 @@ public class MainActivity extends ActionBarActivity {
 
         mDrawerList.setAdapter(mAdapter);
 
-        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+        mDrawerList.setOnItemClickListener((parent, view, position, id) -> {
 
-                // The code below updates the fragment from this activity
-                mDrawerLayout.closeDrawer(mDrawerList);
-                new Handler().postDelayed(new Runnable() { // A runnable allows you to execute the code as a mini-method in a method.
-                    @Override
-                    public void run() {
-                        MainFragment fragment = new MainFragment();
-                        Bundle args = new Bundle();
-                        args.putString(MainFragment.ARG_ITEM_ID, mAdapter.getItem(position).toString());
-                        fragment.setArguments(args);
+            // The code below updates the fragment from this activity
+            mDrawerLayout.closeDrawer(mDrawerList);
+            new Handler().postDelayed(new Runnable() { // A runnable allows you to execute the code as a mini-method in a method.
+                @Override
+                public void run() {
+                    MainFragment fragment = new MainFragment();
+                    Bundle args = new Bundle();
+                    args.putString(MainFragment.ARG_ITEM_ID, mAdapter.getItem(position).toString());
+                    fragment.setArguments(args);
 
-                        FragmentManager fragmentManager = getFragmentManager(); //support fragment manager allows you to manipulate existing fragments.
-                        if (fragmentManager.getBackStackEntryCount() > 0) {
-                            fragmentManager.popBackStack();
-                        }
-                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                        /*The first field is an int that represents the View to be replaced.The
-                        second field is the fragment replacing it.The third field is a tag String that
-                        you can use to select the fragment from the BackStack with.*/
-                        fragmentTransaction.replace(R.id.item_detail_container, fragment, "EQUIPMENT_FRAGMENT");
-                        fragmentTransaction.addToBackStack("EQUIPMENT_FRAGMENT");
-                        fragmentTransaction.commit();
-
-
-                        // update selected item and title, then close the drawer
-                        mDrawerList.setItemChecked(position, true);
-
-                        getSupportActionBar().setTitle(mActivityTitle);
+                    FragmentManager fragmentManager = getFragmentManager(); //support fragment manager allows you to manipulate existing fragments.
+                    if (fragmentManager.getBackStackEntryCount() > 0) {
+                        fragmentManager.popBackStack();
                     }
-                }, 200); // The 200 millisecond post delayed handler allows the tab to slide back
-                // before loading the fragment to avoid a stutter in the slide.
-            }
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    /*The first field is an int that represents the View to be replaced.The
+                    second field is the fragment replacing it.The third field is a tag String that
+                    you can use to select the fragment from the BackStack with.*/
+                    fragmentTransaction.replace(R.id.item_detail_container, fragment, "EQUIPMENT_FRAGMENT");
+                    fragmentTransaction.addToBackStack("EQUIPMENT_FRAGMENT");
+                    fragmentTransaction.commit();
+
+
+                    // update selected item and title, then close the drawer
+                    mDrawerList.setItemChecked(position, true);
+
+                    getSupportActionBar().setTitle(mActivityTitle);
+                }
+            }, 200); // The 200 millisecond post delayed handler allows the tab to slide back
+            // before loading the fragment to avoid a stutter in the slide.
         });
     }
 
@@ -222,6 +223,9 @@ public class MainActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        mSearchView = (android.support.v7.widget.SearchView) MenuItemCompat.getActionView(searchItem);
+
         return true;
     }
 
@@ -231,7 +235,9 @@ public class MainActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        if (id == R.id.action_search) {
+            mDrawerLayout.openDrawer(Gravity.RIGHT);
+        }
         if (id == R.id.home) {
             android.app.FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
