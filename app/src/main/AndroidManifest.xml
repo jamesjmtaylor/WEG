@@ -1,15 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="jamestaylor.weg">
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/weg_icon"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.SEARCH"/>
@@ -21,7 +19,8 @@
 
         <activity
             android:name=".WeaponCalculatorActivity"
-            android:label="Weapon Calculator">
+            android:label="Weapon Calculator"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.CALCULATOR" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -30,7 +29,8 @@
 
         <activity
             android:name=".MemorizationAidActivity"
-            android:label="Memorization Aid">
+            android:label="Memorization Aid"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.AID" />
                 <category android:name="android.intent.category.DEFAULT" />
